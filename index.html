@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labirinto</title>
+    <style>
+        
+        /*.container {
+            width: 100vw;
+            height: 100vh;
+            background: white;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            min-width: 980px;
+            }
+            */
+            
+       
+        
+        body {
+            padding: 25%;
+        }
+
+        /* section {
+            background: white;
+            color: white;
+            border-radius: 1em;
+            padding: 1em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%) 
+        }*/
+
+
+
+        .wall {
+            width: 20px;
+            height: 20px;
+            background-color: rgb(11, 49, 11);
+            box-shadow: 5px 10px 18px #9e9d9d;
+
+        }
+        .wallBl {
+            width: 20px;
+            height: 20px;
+            background-color: rgb(138, 184, 148);
+        }
+
+       
+        .linha {
+            display: flex;
+        }
+
+        
+
+        #box {
+        width: 20px;
+        height: 20px;        
+        background: rgb(116, 12, 12);
+        position: relative;
+        
+        }
+
+        h1 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            color: rgb(14, 59, 22);
+        }
+
+        p {
+            font-size: 12px;
+            text-align: center;
+            color: #bebebe;
+        }
+
+    </style>
+</head>
+<body>
+
+       
+
+      
+        <!-- <div id="box" class="box"></div> -->             
+
+        <div class="boxCenter" id="boxCenter">
+
+            <h1>Jogo do Labirinto</h1>
+
+            
+
+            <!-- linha 1 -->
+            <div class="linha">
+                
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div>  
+            </div> 
+
+            <!-- linha 2 -->
+            <div class="linha">
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl "></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div>
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div>  
+            </div> 
+
+            <!-- linha 3 -->
+            <div class="linha">
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div>  
+            </div> 
+
+            <!-- linha 4 -->
+            <div class="linha">
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div>  
+            </div> 
+
+            <!-- linha 5 -->
+            <div class="linha">
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div>  
+            </div> 
+
+            <!-- linha 6 -->
+            <div class="linha">
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div>
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div>  
+            </div> 
+
+            <!-- linha 7 -->
+            <div class="linha">
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div>  
+            </div> 
+
+            <!-- linha 8 -->
+            <div class="linha">
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div>
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div>
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div>  
+            </div> 
+
+            <!-- linha 9 -->
+            <div class="linha">
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"><p>🏆</p></div>  
+            </div> 
+
+            <!-- linha 10 -->
+            <div class="linha">                
+                <div id="box" class="box"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div>  
+            </div> 
+
+            <!-- linha 11 -->
+            <div class="linha">
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div>  
+            </div> 
+
+            <!-- linha 12 -->
+            <div class="linha">
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div>  
+            </div> 
+
+            <!-- linha 13 -->
+            <div class="linha">
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div>  
+            </div> 
+
+            <!-- linha 14 -->
+            <div class="linha">
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wallBl"></div> 
+                <div class="wall" id="wall"></div>  
+            </div> 
+
+            <!-- linha 15 -->
+            <div class="linha">
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div>
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div> 
+                <div class="wall" id="wall"></div>  
+            </div> 
+        </div>
+    
+
+
+
+
+      
+    <script src="script.js"></script>
+    
+</body>
+</html>
